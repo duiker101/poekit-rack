@@ -1,5 +1,5 @@
 <template lang="pug">
-    .header(:class="type")
+    .header(:class="[type,subtitle.length > 0 ? '' : 'single']")
         .l
         .m {{name}}
             br(v-if="subtitle.length > 0")
@@ -61,7 +61,7 @@
             @include header_bg("Rare");
             @include double_line();
             &.single {
-                @include header_bg("RareSingle");
+                @include header_bg("RareSingleLine");
                 @include single_line();
             }
             color: #ffff77;
@@ -70,7 +70,7 @@
             @include header_bg("Unique");
             @include double_line();
             &.single {
-                @include header_bg("UniqueSingle");
+                @include header_bg("UniqueSingleLine");
                 @include single_line();
             }
             color: #af6025;
