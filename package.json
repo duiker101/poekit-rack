@@ -1,0 +1,38 @@
+{
+  "name": "poekit-rack",
+  "version": "1.0.0",
+  "description": "A Vue component to render Path of Exile items",
+  "main": "dist/lib/poekit-rack.min.js",
+  "scripts": {
+    "dev": "webpack-dev-server --hot --inline --config build/webpack.demo.js",
+    "lib:dev": "webpack --watch --config build/webpack.dev.js",
+    "demo": "webpack --watch --config build/webpack.demo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duiker101/poekit-rack.git"
+  },
+  "author": "Duiker101",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duiker101/poekit-rack/issues"
+  },
+  "homepage": "https://github.com/duiker101/poekit-rack#readme",
+  "dependencies": {
+    "css-loader": "^0.28.11",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^7.0.1",
+    "vue": "^2.5.16",
+    "vue-template-compiler": "^2.5.16",
+    "webpack-merge": "^4.1.2"
+  },
+  "devDependencies": {
+    "file-loader": "^1.1.11",
+    "pug": "^2.0.3",
+    "url-loader": "^1.0.1",
+    "vue-loader": "^14.2.2",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.1.3"
+  }
+}
