@@ -1,26 +1,49 @@
 <template lang="pug">
-    .sockets
+    .sockets(:class="['w'+w,'h'+h,'s'+count]")
         .gems
-            .gem.red
-            .gem.red.socketed.support
-            .gem.red.socketed.active
-            .gem.green
-            .gem.green.socketed.support
-            .gem.green.socketed.active
-            .gem.blue
-            .gem.blue.socketed.support
-            .gem.blue.socketed.active
+            .gem.red(v-if="count > 0")
+            .gem.green(v-if="count > 1")
+            .gem.blue(v-if="count > 2")
+            .gem.red(v-if="count > 3")
+            .gem.green(v-if="count > 4")
+            .gem.blue(v-if="count > 5")
         .links
 </template>
 
 <script>
     export default {
         name: "item-sockets"
-        , props: {sockets: Array, gems: Array}
+        , props: {w: Number, h: Number, sockets: Array, gems: Array}
+        , computed: {
+            count: function () {
+                return this.sockets.length;
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
+    $s: 47px;
+    $s2: $s/2;
+
+    // if there's only one socket, it's always in the horizontal center
+    .s1{
+        left:$s2;
+        // except for items with 1 of width
+        &.w1{
+            left:0;
+        }
+    }
+
+
+
+
+    .h4 {
+        &.s6 {
+            top: 23px;
+        }
+    }
+
     .gems {
         display: inline-grid;
         grid-template-columns: 47px 47px;
@@ -29,6 +52,19 @@
     .gem {
         width: 47px;
         height: 47px;
+
+
+        // this 2 selectors take care of the align in the S of the sockets
+        &:nth-of-type(3) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        &:nth-of-type(4) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+
         &.socketed:hover {
             background-position: 0px -50px;
             cursor: pointer;
@@ -65,6 +101,6 @@
     .sockets {
         position: absolute;
         left: 0;
-        top: 10px;
+        top: 0;
     }
 </style>
