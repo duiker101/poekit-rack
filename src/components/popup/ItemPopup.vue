@@ -8,6 +8,8 @@
             separator(v-if="item.requirements" :type="type")
             item-requirement(v-if="item.requirements" :requirements="item.requirements")
 
+            separator(v-if="item.enchantMods" :type="type")
+            item-mod(v-for="m in item.enchantMods" :key="m" :mod="m" type="crafted")
             separator(v-if="item.implicitMods" :type="type")
             item-mod(v-for="m in item.implicitMods" :key="m" :mod="m" type="implicit")
 
@@ -28,6 +30,7 @@
     import Separator from './Separator'
     import ItemRequirement from "./ItemRequirement";
 
+    // TODO elder and shaper influence
     export default {
         name: 'rack-item-popup',
         props: {item: Object}
