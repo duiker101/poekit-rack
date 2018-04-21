@@ -1,14 +1,7 @@
 <template lang="pug">
     #app
-        item-icon(:item="test_item" :ts="test_item.sockets.slice(0,1)")
-        item-icon(:item="test_item" :ts="test_item.sockets.slice(0,2)")
-        item-icon(:item="test_item" :ts="test_item.sockets.slice(0,3)")
-        item-icon(:item="test_item" :ts="test_item.sockets.slice(0,4)")
-        item-icon(:item="test_item" :ts="test_item.sockets.slice(0,5)")
-        item-icon(:item="test_item" :ts="test_item.sockets")
-
+        rack-item(:item="i" v-for="i in test_data.items" v-bind:key="i.id")
 </template>
-<!--<rack-item :item="i" v-for="i in test_data.items" v-bind:key="i.id"/>-->
 
 <script>
     import test_data from './test_data.json'
