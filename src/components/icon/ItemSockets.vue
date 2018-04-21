@@ -25,6 +25,7 @@
 <style lang="scss" scoped>
     $s: 47px;
     $s2: $s/2;
+    $s3: $s+$s2;
 
     // if there's only one socket, it's always in the horizontal center
     .s1{
@@ -36,11 +37,30 @@
     }
 
 
+    .s1,.s2{
+        &.h2{
+            top:$s2;
+        }
+        &.h3{
+            top:$s;
+        }
+        &.h4{
+            top:$s3;
+        }
+    }
 
+    .s3,.s4{
+        &.h3{
+            top:$s2;
+        }
+        &.h4{
+            top:$s;
+        }
+    }
 
-    .h4 {
-        &.s6 {
-            top: 23px;
+    .s5,.s6{
+        &.h4{
+            top:$s2;
         }
     }
 
@@ -100,7 +120,7 @@
 
     .sockets {
         position: absolute;
-        left: 0;
-        top: 0;
+        /*left: 0;*/
+        /*top: 0;*/
     }
 </style>
