@@ -1,5 +1,5 @@
 <template lang="pug">
-    .rack-item
+    .rack-item-popup
         item-header(:name="name" :subtitle="subtitle" :type="type")
         .content
             item-property(v-for="p in item.properties" :key="p.type" :name="p.name" :values="p.values" :mode="p.displayMode")
@@ -29,10 +29,12 @@
     import ItemRequirement from "./ItemRequirement";
 
     export default {
-        name: 'rack-item',
+        name: 'rack-item-popup',
         props: {item: Object}
         , components: {ItemRequirement, ItemHeader, ItemProperty, ItemMod, Separator}
         , computed: {
+            // The name and the typeLine are a bit interchangeable and sometime you have one or both
+            // also, the set is in either and we need to remove that
             name: function () {
                 let name = this.item.name;
                 if (name.length === 0 && this.item.typeLine.length > 0)
@@ -45,6 +47,7 @@
                     return this.item.typeLine;
                 return "";
             }
+            // frameType indicates the color of the frame. the api doesn't seem to do other rarity distinction
             , type: function () {
                 let types = ['white', 'magic', 'rare', 'unique', 'gem', 'currency'];
                 return types[this.item.frameType];
@@ -68,16 +71,10 @@
         font-style: normal;
     }
 
-    .rack-item {
+    .rack-item-popup {
         font-family: 'FontinSmallCaps', Verdana, Arial, Helvetica, sans-serif;
         background: rgba(0, 0, 0, 0.8);
-        // this min-content is important because it makes it so that the frame is resized to the smallest possible
-        // we then use max-content on the the header and mods to set that as the min-content and we leave the
-        // description to be whatever. the header also handles the min width
-        /*width: min-content;*/
-        /*max-width: 742px;*/
         width: max-content;
-
         font-size: 14.5px;
         text-align: center;
     }
@@ -88,9 +85,6 @@
         width: min-content;
         margin: auto;
         min-width: 243px;
-    }
-
-    .description {
     }
 
     .flavour {
