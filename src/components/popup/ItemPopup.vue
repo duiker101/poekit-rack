@@ -56,14 +56,14 @@
 <style lang="scss" scoped>
     @font-face {
         font-family: 'FontinSmallCaps';
-        src: local("☺"), url('../fonts/fontin-smallcaps-webfont.woff') format("woff");
+        src: local("☺"), url('../../fonts/fontin-smallcaps-webfont.woff') format("woff");
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'FontinRegular';
-        src: local("☺"), url('../fonts/fontin-regular-webfont.woff') format("woff");
+        src: local("☺"), url('../../fonts/fontin-regular-webfont.woff') format("woff");
         font-weight: normal;
         font-style: normal;
     }
