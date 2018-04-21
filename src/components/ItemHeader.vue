@@ -48,6 +48,9 @@
 
     .header {
         display: grid;
+        font-size: 19px;
+        /*width: max-content;*/
+        /*min-width: 243px;*/
 
         @include single_line;
         @include header_bg("White");
