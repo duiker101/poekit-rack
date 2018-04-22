@@ -1,12 +1,12 @@
 <template lang="pug">
     .rack-item
         item-icon(:item="item")
-        rack-item-popup(:item="item")
 </template>
+<!--rack-item-popup(:item="item")-->
 
 <script>
-    import RackItemPopup from "./popup/ItemPopup";
-    import ItemIcon from "./icon/ItemIcon";
+    import RackItemPopup from "./details/RackItemDetails";
+    import ItemIcon from "./icon/RackItemIcon";
 
     export default {
         name: 'rack-item'

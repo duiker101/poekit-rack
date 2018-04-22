@@ -1,8 +1,9 @@
 import Vue from 'Vue'
 import App from './app'
-import RackItem from '../src/'
+import {RackItem,RackItemDetails} from '../src'
 
 Vue.component('rack-item', RackItem);
+Vue.component('rack-item-details', RackItemDetails);
 
 new Vue({
   el: '#app',

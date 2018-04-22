@@ -32,7 +32,7 @@
 
     // TODO elder and shaper influence
     export default {
-        name: 'rack-item-popup',
+        name: 'rack-item-details',
         props: {item: Object}
         , components: {ItemRequirement, ItemHeader, ItemProperty, ItemMod, Separator}
         , computed: {
