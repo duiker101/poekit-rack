@@ -16,6 +16,9 @@
 
 <style lang="scss" scoped>
 
+    // TODO make this assets local too
+    // TODO elder and shaper icons
+
     $asset_base_url: "https://web.poecdn.com/image/Art/2DArt/UIImages/InGame";
     @mixin asset($type,$position) {
         background-image: url(#{$asset_base_url}/ItemsHeader#{$type}#{$position}.png?scale=1);

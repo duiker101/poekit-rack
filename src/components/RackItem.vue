@@ -1,17 +1,19 @@
 <template lang="pug">
     .rack-item
-        item-icon(:item="item")
+        rack-item-icon(:item="item")
+        rack-item-popup
 </template>
-<!--rack-item-popup(:item="item")-->
+<!--rack-item-details(:item="item")-->
 
 <script>
-    import RackItemPopup from "./details/RackItemDetails";
+    import RackItemDetails from "./details/RackItemDetails";
     import ItemIcon from "./icon/RackItemIcon";
+    import RackItemPopup from "./RackItemPopup";
 
     export default {
         name: 'rack-item'
         , props: {item: Object}
-        , components: {ItemIcon, RackItemPopup}
+        , components: {RackItemPopup, ItemIcon, RackItemDetails}
 
     }
 </script>

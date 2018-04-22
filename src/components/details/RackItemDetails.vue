@@ -1,5 +1,5 @@
 <template lang="pug">
-    .rack-item-popup
+    .rack-item-details
         item-header(:name="name" :subtitle="subtitle" :type="type")
         .content
             item-property(v-for="p in item.properties" :key="p.type" :name="p.name" :values="p.values" :mode="p.displayMode")
@@ -75,7 +75,7 @@
         font-style: normal;
     }
 
-    .rack-item-popup {
+    .rack-item-details {
         font-family: 'FontinSmallCaps', Verdana, Arial, Helvetica, sans-serif;
         background: rgba(0, 0, 0, 0.8);
         width: max-content;

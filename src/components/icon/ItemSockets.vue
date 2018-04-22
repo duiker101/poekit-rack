@@ -1,7 +1,7 @@
 <template lang="pug">
     .sockets(:class="['w'+w,'h'+h,'s'+count]")
         .gems
-            .gem(v-for="(s,i) in sockets" :key="i" :class="getClasses(s,i)")
+            .gem(v-for="(s,i) in sockets" :key="i" :class="getClasses(s,i)" @mouseover="show(true,i)" @mouseleave="show(false,i)")
         .links
             .link(v-show="links[0]")
             .link(v-show="links[1]")
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+    import Events from '../../events.js'
     export default {
         name: "item-sockets"
         , props: {w: Number, h: Number, sockets: Array, gems: Array}
@@ -26,7 +27,7 @@
                     if (i === 0)
                         continue;
                     links[i - 1] = lastGroup === s.group;
-                    lastGroup=s.group;
+                    lastGroup = s.group;
                 }
                 return links;
             }
@@ -49,6 +50,18 @@
                     }
                 }
                 return [colour, attr, socketed, gemType];
+            }
+            , show: function (on, i) {
+                let gem = null;
+                for (let s of this.gems) {
+                    if (s.socket === i)
+                        gem = s;
+                }
+
+                if (gem === null)
+                    return;
+
+                Events.$emit('display-popup', on, gem, this.$parent.$el);
             }
         }
     }
@@ -147,7 +160,7 @@
             cursor: pointer;
         }
 
-        @mixin gem($type){
+        @mixin gem($type) {
             background-image: url("../../images/sockets/#{$type}.png");
             &.supportgem {
                 background-image: url("../../images/sockets/#{$type}_support.png");
@@ -156,7 +169,7 @@
                 background-image: url("../../images/sockets/#{$type}_active.png");
             }
         }
-        @mixin white($type){
+        @mixin white($type) {
             &.supportgem {
                 background-image: url("../../images/sockets/#{$type}_support.png");
             }
