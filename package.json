@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --hot --inline --config build/webpack.demo.js",
     "lib:dev": "webpack --watch --config build/webpack.dev.js",
-    "demo": "webpack --watch --config build/webpack.demo.js"
+    "demo": "webpack --watch --config build/webpack.demo.js",
+    "prod": "webpack --config build/webpack.prod.js"
   },
   "repository": {
     "type": "git",

@@ -5,7 +5,6 @@
 
 <script>
     import test_data from './test_data.json'
-    import test_item from './test_item.json'
 
     export default {
         name: 'app',

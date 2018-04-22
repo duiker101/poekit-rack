@@ -8,7 +8,7 @@ module.exports = merge(common, {
 	mode:'development',
     output: {
         filename: 'demo.bundle.js',
-        path: path.resolve(__dirname, "../demo/build"),
+        path: path.resolve(__dirname, "../demo/dist"),
     }
     ,devServer: { inline: true }
     ,devtool: '#source-map'
