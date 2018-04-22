@@ -146,64 +146,49 @@
             background-position: 0px -50px;
             cursor: pointer;
         }
+
+        @mixin gem($type){
+            background-image: url("../../images/sockets/#{$type}.png");
+            &.supportgem {
+                background-image: url("../../images/sockets/#{$type}_support.png");
+            }
+            &.activegem {
+                background-image: url("../../images/sockets/#{$type}_active.png");
+            }
+        }
+        @mixin white($type){
+            &.supportgem {
+                background-image: url("../../images/sockets/#{$type}_support.png");
+            }
+            &.activegem {
+                background-image: url("../../images/sockets/#{$type}_active.png");
+            }
+        }
         &.W {
-            background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjM6e3M6Mjoic3Qi/O3M6MDoiIjtzOjY6ImNv/bG91ciI7czoxOiJXIjtz/OjE6InMiO2Q6MC42MDg1/MTkyNjk3NzY4NzYzO31p/OjE7aToxNDt9/55a80d740a/Socket.png");
+            background-image: url("../../images/sockets/w.png");
             &.R {
-                &.supportgem {
-                    background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjU6e3M6Mjoic3Qi/O3M6Njoic3ByaXRlIjtz/OjY6ImNvbG91ciI7czox/OiJXIjtzOjE6InMiO2Q6/MC42MDg1MTkyNjk3NzY4/NzYzO3M6OToiZ2VtQ29s/b3VyIjtzOjE6IlMiO3M6/NjoiYWN0aXZlIjtiOjA7/fWk6MTtpOjE0O30,/eb21d38d1e/Socket.png");
-                }
-                &.activegem {
-                    background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjU6e3M6Mjoic3Qi/O3M6Njoic3ByaXRlIjtz/OjY6ImNvbG91ciI7czox/OiJXIjtzOjE6InMiO2Q6/MC42MDg1MTkyNjk3NzY4/NzYzO3M6OToiZ2VtQ29s/b3VyIjtzOjE6IlMiO3M6/NjoiYWN0aXZlIjtiOjE7/fWk6MTtpOjE0O30,/8d583b9132/Socket.png");
-                }
+                @include white('w_str')
             }
             &.G {
-                &.supportgem {
-                    background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjU6e3M6Mjoic3Qi/O3M6Njoic3ByaXRlIjtz/OjY6ImNvbG91ciI7czox/OiJXIjtzOjE6InMiO2Q6/MC42MDg1MTkyNjk3NzY4/NzYzO3M6OToiZ2VtQ29s/b3VyIjtzOjE6IkQiO3M6/NjoiYWN0aXZlIjtiOjA7/fWk6MTtpOjE0O30,/edfcd5b5cd/Socket.png");
-                }
-                &.activegem {
-                    background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjU6e3M6Mjoic3Qi/O3M6Njoic3ByaXRlIjtz/OjY6ImNvbG91ciI7czox/OiJXIjtzOjE6InMiO2Q6/MC42MDg1MTkyNjk3NzY4/NzYzO3M6OToiZ2VtQ29s/b3VyIjtzOjE6IkQiO3M6/NjoiYWN0aXZlIjtiOjE7/fWk6MTtpOjE0O30,/e1d16291b3/Socket.png");
-                }
+                @include white('w_dex')
             }
             &.B {
-                &.supportgem {
-                    background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjU6e3M6Mjoic3Qi/O3M6Njoic3ByaXRlIjtz/OjY6ImNvbG91ciI7czox/OiJXIjtzOjE6InMiO2Q6/MC42MDg1MTkyNjk3NzY4/NzYzO3M6OToiZ2VtQ29s/b3VyIjtzOjE6IkkiO3M6/NjoiYWN0aXZlIjtiOjA7/fWk6MTtpOjE0O30,/336ee48e86/Socket.png");
-                }
-                &.activegem {
-                    background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjU6e3M6Mjoic3Qi/O3M6Njoic3ByaXRlIjtz/OjY6ImNvbG91ciI7czox/OiJXIjtzOjE6InMiO2Q6/MC42MDg1MTkyNjk3NzY4/NzYzO3M6OToiZ2VtQ29s/b3VyIjtzOjE6IkkiO3M6/NjoiYWN0aXZlIjtiOjE7/fWk6MTtpOjE0O30,/c23b98fb28/Socket.png");
-                }
+                @include white('w_int')
             }
         }
         &.R {
-            background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjM6e3M6Mjoic3Qi/O3M6MDoiIjtzOjY6ImNv/bG91ciI7czoxOiJSIjtz/OjE6InMiO2Q6MC42MDg1/MTkyNjk3NzY4NzYzO31p/OjE7aToxNDt9/0cb83a2c50/Socket.png");
-            &.supportgem {
-                background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjU6e3M6Mjoic3Qi/O3M6Njoic3ByaXRlIjtz/OjY6ImNvbG91ciI7czox/OiJSIjtzOjE6InMiO2Q6/MC42MDg1MTkyNjk3NzY4/NzYzO3M6OToiZ2VtQ29s/b3VyIjtzOjE6IlMiO3M6/NjoiYWN0aXZlIjtiOjA7/fWk6MTtpOjE0O30,/9f30bbb879/Socket.png");
-            }
-            &.activegem {
-                background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjU6e3M6Mjoic3Qi/O3M6Njoic3ByaXRlIjtz/OjY6ImNvbG91ciI7czox/OiJSIjtzOjE6InMiO2Q6/MC42MDg1MTkyNjk3NzY4/NzYzO3M6OToiZ2VtQ29s/b3VyIjtzOjE6IlMiO3M6/NjoiYWN0aXZlIjtiOjE7/fWk6MTtpOjE0O30,/0b5178a2dc/Socket.png");
-            }
+            @include gem('str');
         }
         &.G {
-            background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjM6e3M6Mjoic3Qi/O3M6MDoiIjtzOjY6ImNv/bG91ciI7czoxOiJHIjtz/OjE6InMiO2Q6MC42MDg1/MTkyNjk3NzY4NzYzO31p/OjE7aToxNDt9/261a47a02c/Socket.png");
-            &.supportgem {
-                background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjU6e3M6Mjoic3Qi/O3M6Njoic3ByaXRlIjtz/OjY6ImNvbG91ciI7czox/OiJHIjtzOjE6InMiO2Q6/MC42MDg1MTkyNjk3NzY4/NzYzO3M6OToiZ2VtQ29s/b3VyIjtzOjE6IkQiO3M6/NjoiYWN0aXZlIjtiOjA7/fWk6MTtpOjE0O30,/906241230d/Socket.png");
-            }
-            &.activegem {
-                background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjU6e3M6Mjoic3Qi/O3M6Njoic3ByaXRlIjtz/OjY6ImNvbG91ciI7czox/OiJHIjtzOjE6InMiO2Q6/MC42MDg1MTkyNjk3NzY4/NzYzO3M6OToiZ2VtQ29s/b3VyIjtzOjE6IkQiO3M6/NjoiYWN0aXZlIjtiOjE7/fWk6MTtpOjE0O30,/5ff0116d1a/Socket.png");
-            }
+            @include gem('dex');
         }
         &.B {
-            background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjM6e3M6Mjoic3Qi/O3M6MDoiIjtzOjY6ImNv/bG91ciI7czoxOiJCIjtz/OjE6InMiO2Q6MC42MDg1/MTkyNjk3NzY4NzYzO31p/OjE7aToxNDt9/5b28808348/Socket.png");
-            &.supportgem {
-                background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjU6e3M6Mjoic3Qi/O3M6Njoic3ByaXRlIjtz/OjY6ImNvbG91ciI7czox/OiJCIjtzOjE6InMiO2Q6/MC42MDg1MTkyNjk3NzY4/NzYzO3M6OToiZ2VtQ29s/b3VyIjtzOjE6IkkiO3M6/NjoiYWN0aXZlIjtiOjA7/fWk6MTtpOjE0O30,/378725743d/Socket.png");
-            }
-            &.activegem {
-                background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjU6e3M6Mjoic3Qi/O3M6Njoic3ByaXRlIjtz/OjY6ImNvbG91ciI7czox/OiJCIjtzOjE6InMiO2Q6/MC42MDg1MTkyNjk3NzY4/NzYzO3M6OToiZ2VtQ29s/b3VyIjtzOjE6IkkiO3M6/NjoiYWN0aXZlIjtiOjE7/fWk6MTtpOjE0O30,/c6c6444909/Socket.png");
-            }
+            @include gem('int');
         }
         &.A {
-            background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjM6e3M6Mjoic3Qi/O3M6MDoiIjtzOjY6ImNv/bG91ciI7czoxOiJBIjtz/OjE6InMiO2Q6MC42MDg1/MTkyNjk3NzY4NzYzO31p/OjE7aToxNDt9/f636423ef0/Socket.png");
+            background-image: url("../../images/sockets/abyss.png");
             &.socketed {
-                background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjU6e3M6Mjoic3Qi/O3M6Njoic3ByaXRlIjtz/OjY6ImNvbG91ciI7czox/OiJBIjtzOjE6InMiO2Q6/MC42MDg1MTkyNjk3NzY4/NzYzO3M6OToiZ2VtQ29s/b3VyIjtzOjE6IkEiO3M6/NjoiYWN0aXZlIjtiOjE7/fWk6MTtpOjE0O30,/142b734bcd/Socket.png");
+                background-image: url("../../images/sockets/abyss_socketed.png");
             }
         }
     }
@@ -214,14 +199,14 @@
     }
 
     @mixin horizontal() {
-        background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjQ6e3M6NDoidHlw/ZSI7czo2OiJzb2NrZXQi/O3M6Mjoic3QiO3M6NDoi/bGluayI7czo0OiJ2ZXJ0/IjtiOjA7czoxOiJzIjtk/OjAuNjA4NTE5MjY5Nzc2/ODc2Mzt9aToxO2k6MTQ7/fQ,,/7da1edc91e/Socket_Link_Horizontal.png");
+        background-image: url("../../images/sockets/link_horizontal.png");
         width: 37.72819px;
         height: 15.21298px;
         left: 28.60041px;
     }
 
     @mixin vertical() {
-        background-image: url("//web.poecdn.com/gen/image/YTozOntpOjA7aTo1O2k6/MjthOjQ6e3M6NDoidHlw/ZSI7czo2OiJzb2NrZXQi/O3M6Mjoic3QiO3M6NDoi/bGluayI7czo0OiJ2ZXJ0/IjtiOjE7czoxOiJzIjtk/OjAuNjA4NTE5MjY5Nzc2/ODc2Mzt9aToxO2k6MTQ7/fQ,,/436e82e9d7/Socket_Link_Vertical.png");
+        background-image: url("../../images/sockets/link_vertical.png");
         width: 15.21298px;
         height: 37.72819px;
     }

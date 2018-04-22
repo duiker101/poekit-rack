@@ -30,6 +30,7 @@
   "devDependencies": {
     "file-loader": "^1.1.11",
     "pug": "^2.0.3",
+    "resolve-url-loader": "^2.3.0",
     "url-loader": "^1.0.1",
     "vue-loader": "^14.2.2",
     "webpack": "^4.6.0",

@@ -1,6 +1,6 @@
 <template lang="pug">
     #app
-        rack-item-details(:item="i" v-for="i in test_data.items" v-bind:key="i.id")
+        rack-item-icon(:item="i" v-for="i in test_data.items" v-bind:key="i.id")
 </template>
 
 <script>
@@ -9,7 +9,7 @@
     export default {
         name: 'app',
         data: function () {
-            return {test_data: test_data, test_item:test_item}
+            return {test_data: test_data}
         }
         , computed: {
             demo_item: function () {

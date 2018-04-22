@@ -1,5 +1,5 @@
 import RackItem from './components/RackItem.vue'
 import RackItemDetails from './components/details/RackItemDetails.vue'
-import font from './fonts/fontin-smallcaps-webfont.woff'
+import RackItemIcon from './components/icon/RackItemIcon.vue'
 
-export {RackItem , RackItemDetails};
+export {RackItem, RackItemIcon, RackItemDetails};

@@ -10,16 +10,24 @@ module.exports = {
                 exclude: ['node_modules']
                 , options: {
                     loaders: {
-                        scss: 'vue-style-loader!css-loader?-url!sass-loader'
+                        scss: 'vue-style-loader!css-loader!sass-loader',
                     }
                 }
             },
-
             {
                 test: /\.woff$/,
                 use: [
                     'file-loader?name=fonts/[name].[ext]'
                 ]
+            },
+            {
+                test: /\.png$/,
+                use: 'url-loader?mimetype=image/png&name=images/[name].[ext]'
+            }
+            ,
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
             }
         ]
     },

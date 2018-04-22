@@ -29,6 +29,7 @@
     import ItemMod from './ItemMod'
     import Separator from './Separator'
     import ItemRequirement from "./ItemRequirement";
+    import font from '../../fonts/fontin-smallcaps-webfont.woff'
 
     // TODO elder and shaper influence
     export default {
