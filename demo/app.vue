@@ -14,3 +14,9 @@
         }
     }
 </script>
+<style lang="scss" scoped>
+    #app{
+        padding:1000px;
+    }
+
+</style>

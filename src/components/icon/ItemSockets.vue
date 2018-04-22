@@ -209,6 +209,9 @@
     .links {
         position: absolute;
         top: 0;
+
+        // this would stops the link from preventing the hover on the sockets
+        /*pointer-events:none;*/
     }
 
     @mixin horizontal() {
