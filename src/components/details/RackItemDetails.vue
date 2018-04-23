@@ -29,7 +29,6 @@
     import ItemMod from './ItemMod'
     import Separator from './Separator'
     import ItemRequirement from "./ItemRequirement";
-    import font from '../../fonts/fontin-smallcaps-webfont.woff'
 
     // TODO elder and shaper influence
     export default {
@@ -63,14 +62,7 @@
 <style lang="scss" scoped>
     @font-face {
         font-family: 'FontinSmallCaps';
-        src: local("☺"), url('../../fonts/fontin-smallcaps-webfont.woff') format("woff");
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: 'FontinRegular';
-        src: local("☺"), url('../../fonts/fontin-regular-webfont.woff') format("woff");
+        src: local("☺"), url('https://web.poecdn.com/font/fontin-smallcaps-webfont.woff') format("woff");
         font-weight: normal;
         font-style: normal;
     }

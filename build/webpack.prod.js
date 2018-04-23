@@ -1,11 +1,13 @@
+const path = require("path");
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.base.js');
 
 module.exports = merge(common, {
+    entry: './src/index.js',
     mode:'production',
     output: {
-        filename: 'bundle.js',
+        filename: 'rack.bundle.js',
         libraryTarget: 'umd',
         library:'Rack'
     }

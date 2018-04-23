@@ -1,7 +1,6 @@
 const path = require("path");
 
 module.exports = {
-    entry: './src/index.js',
     module: {
         rules: [
             {
@@ -13,21 +12,6 @@ module.exports = {
                         scss: 'vue-style-loader!css-loader!sass-loader',
                     }
                 }
-            },
-            {
-                test: /\.woff$/,
-                use: [
-                    'url-loader?name=fonts/[name].[ext]'
-                ]
-            },
-            {
-                test: /\.png$/,
-                use: 'url-loader?mimetype=image/png&name=images/[name].[ext]'
-            }
-            ,
-            {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader'
             }
         ]
     },

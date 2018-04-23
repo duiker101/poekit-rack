@@ -33,7 +33,7 @@
         width: -moz-min-content;
 
         @mixin pic($type,$w,$h) {
-            background-image: url("../../images/item_bg/#{$type}#{$w}#{$h}.png");
+            background-image: url("https://www.pathofexile.com/image/inventory/#{$type}Background.png?w=#{$w}&h=#{$h}&x=0&y=0");
         }
         @mixin type($type) {
             &.w1 {
@@ -64,10 +64,10 @@
         }
 
         &.elder {
-            @include type('elder');
+            @include type('Elder');
         }
         &.shaper {
-            @include type('shaper');
+            @include type('Shaper');
         }
     }
 </style>
