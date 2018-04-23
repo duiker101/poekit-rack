@@ -2,7 +2,7 @@
   "name": "poekit-rack",
   "version": "1.0.0",
   "description": "A Vue component to render Path of Exile items",
-  "main": "dist/lib/poekit-rack.min.js",
+  "main": "dist/rack.bundle.js",
   "scripts": {
     "dev": "webpack-dev-server --hot --inline --config build/webpack.dev.js",
     "demo": "webpack --config build/webpack.dev.js",
