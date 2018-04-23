@@ -1,5 +1,5 @@
 <template lang="pug">
-    .item-icon(:class="[item.elder?'elder':'',item.shaper?'shaper':'','w'+item.w,'h'+item.h]" @mouseover="show(true)" @mouseleave="show(false)")
+    .item-icon(:class="classes" @mouseover="show(true)" @mouseleave="show(false)")
         img(:src="item.icon")
         item-sockets(v-show="hovered" v-if="item.sockets" :sockets="item.sockets" :gems="item.socketedItems" :h="item.h" :w="item.w")
 </template>
@@ -22,15 +22,30 @@
                 this.hovered = on;
             }
         }
+        , computed: {
+            classes: function () {
+                return [
+                    this.item.elder ? 'elder' : ''
+                    , this.item.shaper ? 'shaper' : ''
+                    , 'w' + this.item.w
+                    , 'h' + this.item.h
+                    , this.item.identified ? '' : 'unidentified'
+                ];
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
     .item-icon {
         position: relative;
-        background-repeat: no-repeat;
         width: min-content;
         width: -moz-min-content;
+
+        background: rgba(25, 26, 150, 0.25) no-repeat;
+        &.unidentified {
+            background-color: rgba(210, 0, 0, 0.18);
+        }
 
         @mixin pic($type,$w,$h) {
             background-image: url("https://www.pathofexile.com/image/inventory/#{$type}Background.png?w=#{$w}&h=#{$h}&x=0&y=0");

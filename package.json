@@ -4,9 +4,9 @@
   "description": "A Vue component to render Path of Exile items",
   "main": "dist/rack.bundle.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline --config build/webpack.dev.js",
-    "demo": "webpack --config build/webpack.dev.js",
-    "prod": "webpack --config build/webpack.prod.js"
+    "dev": "webpack-dev-server --hot --inline --config config/webpack.dev.js",
+    "demo": "webpack --watch --config config/webpack.dev.js",
+    "prod": "webpack --watch --config config/webpack.prod.js"
   },
   "repository": {
     "type": "git",

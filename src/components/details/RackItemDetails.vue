@@ -1,5 +1,5 @@
 <template lang="pug">
-    .rack-item-details
+    .rack-item-details()
         item-header(:name="name" :subtitle="subtitle" :type="type")
         .content
             item-property(v-for="p in item.properties" :key="p.type" :name="p.name" :values="p.values" :mode="p.displayMode")
@@ -30,7 +30,7 @@
     import Separator from './Separator'
     import ItemRequirement from "./ItemRequirement";
 
-    // TODO elder and shaper influence
+    // TODO cards
     export default {
         name: 'rack-item-details',
         props: {item: Object}
@@ -69,7 +69,7 @@
 
     .rack-item-details {
         font-family: 'FontinSmallCaps', Verdana, Arial, Helvetica, sans-serif;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.06);
         width: max-content;
         font-size: 14.5px;
         text-align: center;

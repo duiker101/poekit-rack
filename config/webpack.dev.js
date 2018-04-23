@@ -8,7 +8,7 @@ module.exports = merge(common, {
 	mode:'development',
     output: {
         path: path.join(__dirname, "../docs/dist"),
-        publicPath: "/dist/",
+        publicPath: "/docs/dist/",
         filename: "dev.bundle.js",
     }
     ,devServer: { inline: true }
