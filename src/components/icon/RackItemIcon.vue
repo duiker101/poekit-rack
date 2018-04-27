@@ -5,35 +5,35 @@
 </template>
 
 <script>
-    import ItemSockets from "./ItemSockets";
-    import Events from '../../events.js'
+import ItemSockets from './ItemSockets'
+import Events from '../../events.js'
 
-    export default {
-        name: "rack-item-icon"
-        , props: {item: Object}
-        , data: function () {
-            return {hovered: false}
-        }
-        , components: {ItemSockets}
-        , methods: {
-            show: function (on) {
-                if (on !== this.hovered)
-                    Events.$emit('display-popup', on, this.item, this.$el);
-                this.hovered = on;
-            }
-        }
-        , computed: {
-            classes: function () {
-                return [
-                    this.item.elder ? 'elder' : ''
-                    , this.item.shaper ? 'shaper' : ''
-                    , 'w' + this.item.w
-                    , 'h' + this.item.h
-                    , this.item.identified ? '' : 'unidentified'
-                ];
-            }
+export default {
+    name: 'rack-item-icon'
+    , props: {item: Object}
+    , data: function () {
+        return {hovered: false}
+    }
+    , components: {ItemSockets}
+    , methods: {
+        show: function (on) {
+            if (on !== this.hovered)
+                Events.$emit('display-popup', on, this.item, this.$el)
+            this.hovered = on
         }
     }
+    , computed: {
+        classes: function () {
+            return [
+                this.item.elder ? 'elder' : ''
+                , this.item.shaper ? 'shaper' : ''
+                , 'w' + this.item.w
+                , 'h' + this.item.h
+                , this.item.identified ? '' : 'unidentified'
+            ]
+        }
+    }
+}
 </script>
 
 <style lang="scss" scoped>

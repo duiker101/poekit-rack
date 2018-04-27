@@ -3,10 +3,10 @@
 </template>
 
 <script>
-    export default {
-        name: "separator"
-        , props: {type: String}
-    }
+export default {
+    name: 'separator'
+    , props: {type: String}
+}
 </script>
 
 <style lang="scss" scoped>

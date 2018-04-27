@@ -1,4 +1,4 @@
-const webpackConfig = require('./build/webpack.dev.js');
+const webpackConfig = require('./build/webpack.dev.js')
 
 module.exports = function (config) {
     config.set({
@@ -13,4 +13,4 @@ module.exports = function (config) {
         reporters: ['spec'],
         browsers: ['jsdom']
     })
-};
+}

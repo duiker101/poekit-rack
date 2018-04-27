@@ -5,6 +5,7 @@
   "main": "dist/rack.bundle.js",
   "scripts": {
     "clean": "rimraf dist docs/dist",
+    "lint": "eslint --fix docs/ src/",
     "build:demo": "webpack --config build/webpack.dev.js",
     "build:prod": "webpack --config build/webpack.prod.js",
     "build:all": "npm run build:prod && npm run build:demo",
@@ -56,6 +57,11 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
-    "pug-plain-loader": "^1.0.0"
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.5.0",
+    "pug-plain-loader": "^1.0.0",
+    "vue-eslint-parser": "^2.0.3"
   }
 }

@@ -3,15 +3,15 @@
 </template>
 
 <script>
-    export default {
-        name: "item-mod"
-        , props: {mod: String, type: String}
-        , computed:{
-            html:function () {
-                return this.mod.replace('\n','<br />');
-            }
+export default {
+    name: 'item-mod'
+    , props: {mod: String, type: String}
+    , computed:{
+        html:function () {
+            return this.mod.replace('\n','<br />')
         }
     }
+}
 </script>
 
 <style lang="scss" scoped>

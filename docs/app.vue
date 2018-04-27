@@ -5,14 +5,14 @@
 </template>
 
 <script>
-    import test_data from './test_data.json'
+import test_data from './test_data.json'
 
-    export default {
-        name: 'app',
-        data: function () {
-            return {test_data: test_data}
-        }
+export default {
+    name: 'app',
+    data: function () {
+        return {test_data: test_data}
     }
+}
 </script>
 <style>
 body,html{

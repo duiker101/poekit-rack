@@ -11,59 +11,59 @@
 </template>
 
 <script>
-    import Events from '../../events.js'
-    export default {
-        name: "item-sockets"
-        , props: {w: Number, h: Number, sockets: Array, gems: Array}
-        , computed: {
-            count: function () {
-                return this.sockets.length;
-            }
-            , links: function () {
-                let links = {};
-                let lastGroup = 0;
-                for (let [i, s] of this.sockets.entries()) {
-                    if (i === 0)
-                        continue;
-                    links[i - 1] = lastGroup === s.group;
-                    lastGroup = s.group;
-                }
-                return links;
-            }
+import Events from '../../events.js'
+export default {
+    name: 'item-sockets'
+    , props: {w: Number, h: Number, sockets: Array, gems: Array}
+    , computed: {
+        count: function () {
+            return this.sockets.length
         }
-        , methods: {
-            getClasses: function (s, i) {
-                let colour = s.sColour;
-                let attr = '';
-                let socketed = '';
-                let gemType = '';
-
-                let colors = {'I': 'B', 'S': 'R', 'D': 'G'};
-                for (let g in this.gems) {
-                    let gem = this.gems[g];
-                    if (gem.socket === i) {
-                        attr = colors[gem.colour];
-                        socketed = 'socketed';
-                        gemType = gem.support ? 'supportgem' : 'activegem';
-                        break;
-                    }
-                }
-                return [colour, attr, socketed, gemType];
+        , links: function () {
+            let links = {}
+            let lastGroup = 0
+            for (let [i, s] of this.sockets.entries()) {
+                if (i === 0)
+                    continue
+                links[i - 1] = lastGroup === s.group
+                lastGroup = s.group
             }
-            , show: function (on, i) {
-                let gem = null;
-                for (let s of this.gems) {
-                    if (s.socket === i)
-                        gem = s;
-                }
-
-                if (gem === null)
-                    return;
-
-                Events.$emit('display-popup', on, gem, this.$parent.$el);
-            }
+            return links
         }
     }
+    , methods: {
+        getClasses: function (s, i) {
+            let colour = s.sColour
+            let attr = ''
+            let socketed = ''
+            let gemType = ''
+
+            let colors = {'I': 'B', 'S': 'R', 'D': 'G'}
+            for (let g in this.gems) {
+                let gem = this.gems[g]
+                if (gem.socket === i) {
+                    attr = colors[gem.colour]
+                    socketed = 'socketed'
+                    gemType = gem.support ? 'supportgem' : 'activegem'
+                    break
+                }
+            }
+            return [colour, attr, socketed, gemType]
+        }
+        , show: function (on, i) {
+            let gem = null
+            for (let s of this.gems) {
+                if (s.socket === i)
+                    gem = s
+            }
+
+            if (gem === null)
+                return
+
+            Events.$emit('display-popup', on, gem, this.$parent.$el)
+        }
+    }
+}
 </script>
 
 <style lang="scss" scoped>

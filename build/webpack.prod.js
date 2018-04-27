@@ -1,7 +1,7 @@
-const path = require("path");
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const common = require('./webpack.base.js');
+const path = require('path')
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const common = require('./webpack.base.js')
 
 module.exports = merge(common, {
     entry: './src/index.js',
@@ -16,4 +16,4 @@ module.exports = merge(common, {
         new webpack.DefinePlugin({
             IS_DEV: JSON.stringify(true)
         })]
-});
+})

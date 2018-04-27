@@ -24,39 +24,39 @@
 </template>
 
 <script>
-    import ItemHeader from './ItemHeader'
-    import ItemProperty from './ItemProperty'
-    import ItemMod from './ItemMod'
-    import Separator from './Separator'
-    import ItemRequirement from "./ItemRequirement";
+import ItemHeader from './ItemHeader'
+import ItemProperty from './ItemProperty'
+import ItemMod from './ItemMod'
+import Separator from './Separator'
+import ItemRequirement from './ItemRequirement'
 
-    // TODO cards
-    export default {
-        name: 'rack-item-details',
-        props: {item: Object}
-        , components: {ItemRequirement, ItemHeader, ItemProperty, ItemMod, Separator}
-        , computed: {
-            // The name and the typeLine are a bit interchangeable and sometime you have one or both
-            // also, the set is in either and we need to remove that
-            name: function () {
-                let name = this.item.name;
-                if (name.length === 0 && this.item.typeLine.length > 0)
-                    name = this.item.typeLine;
+// TODO cards
+export default {
+    name: 'rack-item-details',
+    props: {item: Object}
+    , components: {ItemRequirement, ItemHeader, ItemProperty, ItemMod, Separator}
+    , computed: {
+        // The name and the typeLine are a bit interchangeable and sometime you have one or both
+        // also, the set is in either and we need to remove that
+        name: function () {
+            let name = this.item.name
+            if (name.length === 0 && this.item.typeLine.length > 0)
+                name = this.item.typeLine
 
-                return name.replace(/(<<[A-Za-z:]+>>)/g, '')
-            }
-            , subtitle: function () {
-                if (this.item.name.length > 0)
-                    return this.item.typeLine;
-                return "";
-            }
-            // frameType indicates the color of the frame. the api doesn't seem to do other rarity distinction
-            , type: function () {
-                let types = ['white', 'magic', 'rare', 'unique', 'gem', 'currency'];
-                return types[this.item.frameType];
-            }
+            return name.replace(/(<<[A-Za-z:]+>>)/g, '')
+        }
+        , subtitle: function () {
+            if (this.item.name.length > 0)
+                return this.item.typeLine
+            return ''
+        }
+        // frameType indicates the color of the frame. the api doesn't seem to do other rarity distinction
+        , type: function () {
+            let types = ['white', 'magic', 'rare', 'unique', 'gem', 'currency']
+            return types[this.item.frameType]
         }
     }
+}
 </script>
 
 <style lang="scss" scoped>

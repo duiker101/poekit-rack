@@ -8,10 +8,10 @@
 </template>
 
 <script>
-    export default {
-        name: "item-header"
-        , props: {name: String, subtitle: String, type: String}
-    }
+export default {
+    name: 'item-header'
+    , props: {name: String, subtitle: String, type: String}
+}
 </script>
 
 <style lang="scss" scoped>

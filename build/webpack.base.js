@@ -1,8 +1,17 @@
-const {VueLoaderPlugin} = require('vue-loader');
+const {VueLoaderPlugin} = require('vue-loader')
 
 module.exports = {
     module: {
         rules: [
+            {
+                enforce: 'pre',
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: [
+                    'babel-loader',
+                    'eslint-loader',
+                ]
+            },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -42,5 +51,8 @@ module.exports = {
     }
     , plugins: [
         new VueLoaderPlugin()
+        ,new webpack.DefinePlugin({
+            IS_DEV: JSON.stringify(true)
+        })
     ]
-};
+}

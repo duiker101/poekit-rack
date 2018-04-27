@@ -10,36 +10,36 @@
 </template>
 
 <script>
-    // TODO display modes:
-    // 0 == X: Y
-    // 1 == Y X, Y1 X1, Y2 X2
-    // 2 == ???
-    // 3 == replace %0 %1...
-    export default {
-        name: "item-property",
-        props: {name: String, values: Array, mode: Number}
-        , computed: {
-            hasValue: function () {
-                if (this.values == null)
-                    return false;
-                return this.values.length > 0;
+// TODO display modes:
+// 0 == X: Y
+// 1 == Y X, Y1 X1, Y2 X2
+// 2 == ???
+// 3 == replace %0 %1...
+export default {
+    name: 'item-property',
+    props: {name: String, values: Array, mode: Number}
+    , computed: {
+        hasValue: function () {
+            if (this.values == null)
+                return false
+            return this.values.length > 0
+        }
+        ,replaced:function () {
+            let htmls = []
+            for(let value in this.values){
+                let cls = this.values[value][1] === 1 ? 'augmented':''
+                htmls.push(`<span class='value ${cls}'>${this.values[value][0]}</span>`)
             }
-            ,replaced:function () {
-                let htmls = [];
-                for(let value in this.values){
-                    let cls = this.values[value][1] === 1 ? 'augmented':'';
-                    htmls.push(`<span class='value ${cls}'>${this.values[value][0]}</span>`)
-                }
-                let i = 0;
-                let result = `<div>${this.name}</div>`;
-                while(result.indexOf(`%${i}`) >= 0){
-                    result = result.replace(`%${i}`,htmls[i]);
-                    i++;
-                }
-                return result;
+            let i = 0
+            let result = `<div>${this.name}</div>`
+            while(result.indexOf(`%${i}`) >= 0){
+                result = result.replace(`%${i}`,htmls[i])
+                i++
             }
+            return result
         }
     }
+}
 </script>
 
 <style lang="scss">

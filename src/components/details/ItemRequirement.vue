@@ -12,17 +12,17 @@
 </template>
 
 <script>
-    export default {
-        name: "item-requirement"
-        , props: {requirements: Array}
-        // , methods: {
-        //     makeText(req) {
-        //         if (req.displayMode === 0)
-        //             return `${req.name} ${req.values[0][0]}`;
-        //         return req.name;
-        //     }
-        // }
-    }
+export default {
+    name: 'item-requirement'
+    , props: {requirements: Array}
+    // , methods: {
+    //     makeText(req) {
+    //         if (req.displayMode === 0)
+    //             return `${req.name} ${req.values[0][0]}`;
+    //         return req.name;
+    //     }
+    // }
+}
 </script>
 
 <style lang="scss" scoped>
