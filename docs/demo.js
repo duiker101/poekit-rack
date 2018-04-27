@@ -9,4 +9,5 @@ Vue.component('rack-item-icon', RackItemIcon);
 new Vue({
     el: '#app',
     render: h => h(App),
+    components:{RackItem,RackItemDetails, RackItemIcon}
 });

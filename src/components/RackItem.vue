@@ -3,7 +3,6 @@
         rack-item-icon(:item="item")
         rack-item-popup
 </template>
-<!--rack-item-details(:item="item")-->
 
 <script>
     import RackItemDetails from "./details/RackItemDetails";
