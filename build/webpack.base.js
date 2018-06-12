@@ -1,4 +1,5 @@
 const {VueLoaderPlugin} = require('vue-loader')
+const webpack = require('webpack')
 
 module.exports = {
     module: {
